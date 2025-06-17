@@ -1,0 +1,21 @@
+name: test-java
+on:
+    push:
+        branches:
+            - main
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: obtener y chequear repositorio
+              uses: actions/checkout@v4
+
+            - name: configuar entorno Java
+              uses: actions/setup-java@v2
+              with:
+                java-version: '17' # Especifica la versión de Java que necesitas
+                distribution: 'temurin'  # Puedes usar 'temurin', 'zulu', etc.
+
+            - name: compilar y ejecutar pruebas
+              run: mvn test
