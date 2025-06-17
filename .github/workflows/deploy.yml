@@ -1,9 +1,9 @@
 name: maquinaJava
 on:
     workflow_run:
-        types: [completed]
-        workflows: ["test-java"]
-        branches: [main]
+      workflows: ["test-java"]
+      types: [completed]
+      branches: [main]
 jobs:
     build:
         runs-on: ubuntu-latest
