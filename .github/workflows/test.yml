@@ -18,4 +18,6 @@ jobs:
                 distribution: 'temurin'  # Puedes usar 'temurin', 'zulu', etc.
 
             - name: compilar y ejecutar pruebas
-              run: mvn test
+              run: |
+                cd ejmploJava
+                mvn test
